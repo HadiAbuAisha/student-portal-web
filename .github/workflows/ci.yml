@@ -1,0 +1,20 @@
+name: PHP and JS quality checks
+on: [push, pull_request]
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.3'
+          tools: none
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: PHP lint
+        run: bash scripts/check-syntax.sh
+      - name: Test PHP helpers
+        run: php -d zend.assertions=1 -d assert.exception=1 scripts/test-helpers.php
+      - name: JavaScript syntax
+        run: node --check public/assets/app.js
