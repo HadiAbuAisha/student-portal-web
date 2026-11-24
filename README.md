@@ -1,4 +1,4 @@
-<p align="center"><img src="docs/assets/hero.png" alt="CampusFlow project cover" width="100%"></p>
+<p align="center"><img src="docs/assets/cover.svg" alt="Distinct blue CampusFlow illustration" width="100%"></p>
 <p align="center"><strong>Full-stack student management</strong></p>
 <p align="center"><code>PHP · MariaDB · JavaScript</code></p>
 
